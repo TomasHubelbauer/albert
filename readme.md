@@ -9,3 +9,7 @@ extract the item price and photo associations.
 ### Read the PDF spec and implement the text layout algorithms
 
 https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdfs/pdf_reference_archives/PDFReference.pdf
+
+### Consider using Hummus even though it is discontinued
+
+https://github.com/galkahana/HummusJS
