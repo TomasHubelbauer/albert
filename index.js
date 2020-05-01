@@ -119,6 +119,9 @@ void async function () {
       }
 
       await fs.writeJSON(`data/${number}/page.json`, item, { spaces: 2 });
+      await fs.copy('page.html', `data/${number}/page.html`);
+      await fs.copy('page.js', `data/${number}/page.js`);
+      await fs.copy('page.css', `data/${number}/page.css`);
       console.log(`Content saved ${number}/${length}`);
     }
   }
