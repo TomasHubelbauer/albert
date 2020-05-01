@@ -17,3 +17,5 @@ needed to inspect the `PDFViewerApplication` for fields (including nested) which
 could be used to extract image bounds or to monkey-patch the PDF.js rendered so
 that when it renders an image onto the canvas, it also passes along the bounds
 to me.
+
+Use https://mozilla.github.io/pdf.js/web/viewer.html to debug PDF.js.
