@@ -36,11 +36,25 @@ void async function () {
         const imageLayer = {
           beginLayout: () => { },
           endLayout: undefer,
-          appendImage: ({ left: x, top: y, width, height, imgData }) => {
-            console.log(number, x, y, width, height, imgData || 'no data!');
+          appendImage: ({ left: x, top: y, width, height, imgData, objId }) => {
             if (!imgData) {
-              item.images.push({ x, y, width, height });
-              return;
+              // TODO: Fallback: commonObjs
+              const img = page.objs.get(objId);
+              const canvas = window.document.createElement('canvas');
+              canvas.width = img.naturalWidth;
+              canvas.height = img.naturalHeight;
+              const context = canvas.getContext('2d');
+              context.drawImage(img, 0, 0);
+              imgData = context.getImageData(0, 0, img.naturalWidth, img.naturalHeight);
+
+              // TODO: Verify this is always the case for images which come like this
+              top -= height;
+            }
+
+            console.log(number, x, y, width, height, imgData);
+            if (!imgData) {
+              alert('No image data!');
+              throw new Error('No image data!');
             }
 
             const canvas = document.createElement('canvas');
@@ -96,9 +110,6 @@ void async function () {
       let counter = 0;
       for (const image of item.images) {
         counter++;
-        if (!image.data) {
-          continue;
-        }
 
         const buffer = new Buffer.from(image.data.url.slice('data:image/png;base64,'.length), 'base64');
         await fs.writeFile(`data/${number}/${counter}.png`, buffer);
