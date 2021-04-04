@@ -131,10 +131,8 @@ void async function () {
       image.data.name = counter + '.png';
     }
 
-    await fs.promises.writeFile(`data/${number}/page.json`, JSON.stringify(item, null, 2));
-    await fs.promises.copyFile('page.html', `data/${number}/page.html`);
-    await fs.promises.copyFile('page.js', `data/${number}/page.js`);
-    await fs.promises.copyFile('page.css', `data/${number}/page.css`);
+    await fs.promises.writeFile(`data/${number}/${number}.json`, JSON.stringify(item, null, 2));
+    await fs.promises.writeFile('data/data.json', number.toString());
     console.log(`Content saved ${number}/${length}`);
   }
 
