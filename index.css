@@ -1,4 +1,5 @@
 span {
+  background: rgba(255, 255, 255, .75);
   font: icon;
   overflow: hidden;
 }

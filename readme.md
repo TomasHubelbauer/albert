@@ -6,7 +6,9 @@ scrape this PDF and extract the item price and photo associations.
 
 ## Running
 
-`node .`
+`node extract` to generate `data` directory with extracted image and text bounds
+and `python3 -m http.server` and `http://localhost:8000` to view the extracted
+data.
 
 ## To-Do
 
