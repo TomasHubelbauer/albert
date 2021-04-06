@@ -1,8 +1,52 @@
-canvas {
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .25);
-  display: block;
+body {
+  display: flex;
+  font: icon;
 }
 
-canvas:not(.seen) {
-  display: none;
+canvas {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .25);
+  margin: 1ex;
+}
+
+#toolDiv {
+  margin: 1ex;
+}
+
+#partDiv {
+  display:flex;
+}
+
+#imgDiv {
+  flex: 1;
+}
+
+#imgDiv::before {
+  content: 'Images';
+  display: block;
+  text-align: center;
+}
+
+#imgDiv div {
+  display: inline-block;
+}
+
+#imgDiv img {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .25);
+  margin: 1ex;
+  max-height: 128px;
+  max-width: 128px;
+}
+
+#txtDiv::before {
+  content: 'Texts';
+  display: block;
+  text-align: center;
+}
+
+#txtDiv {
+  flex: 1;
+}
+
+#txtDiv div {
+  display: inline-block;
 }
