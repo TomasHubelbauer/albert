@@ -1,5 +1,8 @@
-span {
-  background: rgba(255, 255, 255, .75);
-  font: icon;
-  overflow: hidden;
+canvas {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .25);
+  display: block;
+}
+
+canvas:not(.seen) {
+  display: none;
 }

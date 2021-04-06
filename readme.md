@@ -12,15 +12,9 @@ data.
 
 ## To-Do
 
-### Use `canvas` to render the images and texts instead of pure HTML elements
+### Scrape page viewport size and set the `canvas` size to the scraped size
 
-This will make it easier to crop to the viewport size and to add UI around the
-rendered page.
-
-### Scrape page viewport size and prevent viewport overflow in the viewer app
-
-By switching to `canvas` (which is another todo), this will just be a matter of
-setting the correct canvas dimensions.
+Right now the page `canvas` size is hard-coded to 480x840 which looks correct.
 
 ### Figure out why some of the images do not show or show elsewhere/covered
 
